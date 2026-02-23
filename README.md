@@ -51,7 +51,38 @@ sudo emerge --sync gentoo-zh
 sudo emerge net-proxy/bore
 ```
 
-### Binary Distribution
+### Windows
+
+#### Binary Distribution
+
+The easiest way to install bore on Windows is from prebuilt binaries. These are available on the [releases page](https://github.com/ekzhang/bore/releases). Just unzip the appropriate file and move the `bore.exe` executable into a folder on your PATH.
+
+#### Windows Defender / Antivirus Warnings
+
+Since `bore` performs network port forwarding, Windows Defender or other antivirus software may flag it as a potential threat. This is a false positive. To resolve this:
+
+**Option 1: Add an Exclusion in Windows Defender (Recommended)**
+
+1. Open Windows Security (search for "Windows Security" in the Start menu)
+2. Go to **Virus & threat protection**
+3. Click **Manage settings** under "Virus & threat protection settings"
+4. Scroll down to **Exclusions** and click **Add or remove exclusions**
+5. Click **Add an exclusion** → **File**
+6. Navigate to and select the `bore.exe` executable
+
+**Option 2: Add Folder Exclusion**
+
+If you built `bore` from source, you can exclude the entire project folder:
+
+1. Follow steps 1-4 above
+2. Click **Add an exclusion** → **Folder**
+3. Select the folder containing your `bore.exe` or the entire project directory
+
+**Option 3: Build from Source**
+
+Building from source with the included manifest file may reduce false positives. See the Cargo installation section below.
+
+### Binary Distribution (Other Platforms)
 
 Otherwise, the easiest way to install bore is from prebuilt binaries. These are available on the [releases page](https://github.com/ekzhang/bore/releases) for macOS, Windows, and Linux. Just unzip the appropriate file for your platform and move the `bore` executable into a folder on your PATH.
 
